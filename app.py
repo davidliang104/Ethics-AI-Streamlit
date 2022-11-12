@@ -9,9 +9,8 @@ from tensorflow.keras.models import load_model
 # import seaborn as sns
 # import matplotlib.pyplot as plt
 
-#https://drive.google.com/file/d/1qXFW1HgrLkKbqdqxv0Tq1M8joU3U8p8x/view?usp=share_link
 # Load model
-model = load_model('model_cls_30e.h5')
+model = load_model('model_cls_810_28_700_gb.h5')
 
 def image_prep_cls(image):
   # Image preprocessing
