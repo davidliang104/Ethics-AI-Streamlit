@@ -6,7 +6,7 @@ cv2
 tensorflow.keras.models
 torch
 
-# Yolo
+# YOLOv5
 # Base ---------------------------------------------------------------------
 ipython  # interactive notebook
 matplotlib>=3.2.2
