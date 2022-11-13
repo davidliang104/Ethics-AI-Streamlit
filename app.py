@@ -13,7 +13,7 @@ import torch
 # import matplotlib.pyplot as plt
 
 # Load model
-model = load_model(os.path.join('models','model_cls_810_28_700_gb.h5'))
+model = load_model(os.path.join('models','models\model_cls_810_28_700_gb_imb.h5'))
 print(f"Setup complete. Using torch {torch.__version__} ({torch.cuda.get_device_properties(0).name if torch.cuda.is_available() else 'CPU'})")
 
 image_dir = 'images'
@@ -108,20 +108,3 @@ if uploaded_files is not None:
             st.success(cls_prediction) # Display prediction
             st.text("")
             st.text("")
-
-        # for file in uploaded_files:
-        #     image_path = os.path.join('images',file.name)
-
-        #     # Display the image
-        #     display_image = cv2.imread(image_path)
-        #     display_image = cv2.cvtColor(display_image, cv2.COLOR_RGB2BGR)
-        #     st.image(display_image)
-
-        #     predict_box(image_path)
-
-        #     # # Get classification
-        #     # cls_prediction = predict_cls(image_path)
-        #     # st.success(cls_prediction) # Display prediction
-
-        #     # Delete uploaded image after prediction
-        #     os.remove(image_path) 
