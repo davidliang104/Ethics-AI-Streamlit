@@ -1,6 +1,6 @@
 import streamlit as st
-
 import os
+import sys
 import numpy as np
 import cv2
 from tensorflow.keras.models import load_model
@@ -70,7 +70,7 @@ def img_prep_box(image):
 def predict_box(image_dir):
     # image = cv2.imread(image_path)
     # Run prediction
-    subprocess.run(['python', 'yolov5/detect.py', '--weights', os.path.join('models','best_iaug720.pt'), '--img', '720', '--conf', '0.4', '--source', image_dir, '--save-txt', '--save-conf', '--exist-ok'])
+    subprocess.run([f"{sys.executable}", 'yolov5/detect.py', '--weights', os.path.join('models','best_iaug720.pt'), '--img', '720', '--conf', '0.4', '--source', image_dir, '--save-txt', '--save-conf', '--exist-ok'])
 
 
 def save_uploaded_file(uploaded_files):

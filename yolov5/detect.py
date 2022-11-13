@@ -31,8 +31,8 @@ import platform
 import sys
 from pathlib import Path
 
-import subprocess
-subprocess.run(['python', '-m', 'pip', 'install', 'torch'])
+# import subprocess
+# subprocess.run(['python', '-m', 'pip', 'install', 'torch'])
 
 import torch
 
