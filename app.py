@@ -81,7 +81,7 @@ def save_uploaded_file(uploaded_files):
 
     # Remove images not in uploaded files anymore
     for image in os.listdir(image_dir):
-        print(image)
+        print("File name:",image)
         if image not in file_names:
             os.remove(os.path.join(image_dir, image))
             os.remove(os.path.join(det_dir, image))
