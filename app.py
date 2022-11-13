@@ -13,7 +13,7 @@ import torch
 # import matplotlib.pyplot as plt
 
 # Load model
-model = load_model(os.path.join('models','models\model_cls_810_28_700_gb_imb.h5'))
+model = load_model(os.path.join('models', os.join('models','model_cls_810_28_700_gb_imb.h5'))
 print(f"Setup complete. Using torch {torch.__version__} ({torch.cuda.get_device_properties(0).name if torch.cuda.is_available() else 'CPU'})")
 
 image_dir = 'images'
@@ -72,7 +72,6 @@ def predict_box(image_dir):
     # Run prediction
     subprocess.run([f"{sys.executable}", 'yolov5/detect.py', '--weights', os.path.join('models','best_iaug720.pt'), '--img', '720', '--conf', '0.4', '--source', image_dir, '--save-txt', '--save-conf', '--exist-ok'])
 
-
 def save_uploaded_file(uploaded_files):
     file_names = []
     for file in uploaded_files:
@@ -85,7 +84,8 @@ def save_uploaded_file(uploaded_files):
         if image not in file_names:
             os.remove(os.path.join(image_dir, image))
             os.remove(os.path.join(det_dir, image))
-            os.remove(os.path.join(label_dir, image[:-4]+'.txt'))
+            image_name = image.split(".")
+            os.remove(os.path.join(label_dir, image_name[0]+'.txt'))
 
     return 1
 
