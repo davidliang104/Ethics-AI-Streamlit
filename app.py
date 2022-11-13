@@ -13,7 +13,7 @@ import torch
 # import matplotlib.pyplot as plt
 
 # Load model
-model = load_model(os.path.join('models', os.join('models','model_cls_810_28_700_gb_imb.h5'))
+model = load_model(os.path.join('models', 'model_cls_810_28_700_gb_imb.h5'))
 print(f"Setup complete. Using torch {torch.__version__} ({torch.cuda.get_device_properties(0).name if torch.cuda.is_available() else 'CPU'})")
 
 image_dir = 'images'
