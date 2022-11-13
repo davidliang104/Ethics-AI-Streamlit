@@ -72,6 +72,10 @@ def predict_box(image_dir):
     # Run prediction
     subprocess.run([f"{sys.executable}", 'yolov5/detect.py', '--weights', os.path.join('models','best_iaug720.pt'), '--img', '720', '--conf', '0.4', '--source', image_dir, '--save-txt', '--save-conf', '--exist-ok'])
 
+def silent_remove(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
+
 def save_uploaded_file(uploaded_files):
     file_names = []
     for file in uploaded_files:
@@ -83,10 +87,10 @@ def save_uploaded_file(uploaded_files):
     for image in os.listdir(image_dir):
         print("File name:",image)
         if image not in file_names:
-            os.remove(os.path.join(image_dir, image))
-            os.remove(os.path.join(det_dir, image))
+            silent_remove(os.path.join(image_dir, image))
+            silent_remove(os.path.join(det_dir, image))
             image_name = image.split(".")
-            os.remove(os.path.join(label_dir, image_name[0]+'.txt'))
+            silent_remove(os.path.join(label_dir, image_name[0]+'.txt'))
 
     return 1
 
