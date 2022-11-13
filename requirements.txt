@@ -1,6 +1,5 @@
 # app.py
 streamlit
-os
 numpy
 cv2
 tensorflow.keras.models
