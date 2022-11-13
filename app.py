@@ -92,7 +92,7 @@ def save_uploaded_file(uploaded_files):
 uploaded_files = st.file_uploader("Upload image", accept_multiple_files=True, type=["png","jpg","jpeg"])
 
 if uploaded_files is not None:
-    if save_uploaded_file(uploaded_files):        
+    if len(uploaded_files)>0 and save_uploaded_file(uploaded_files):        
         # Predict all bounding boxes
         predict_box(image_dir)
 
