@@ -21,7 +21,7 @@ det_dir = os.path.join('yolov5', 'runs', 'detect', 'exp')
 label_dir = os.path.join(det_dir, 'labels')
 
 def silent_remove(filename):
-    if os.path.exists(filename):
+    if os.path.exists(filename) and os.path.isfile(filename):
         os.remove(filename)
 
 def empty_dir(dir):
