@@ -29,10 +29,12 @@ def empty_dir(dir):
         if file != '.gitkeep':
             silent_remove(os.path.join(dir, file))
 
-# Empty all directories
-empty_dir(image_dir)
-empty_dir(det_dir)
-empty_dir(label_dir)
+@st.cache
+def clear_all_dir():
+    # Empty all directories at start of session
+    empty_dir(image_dir)
+    empty_dir(det_dir)
+    empty_dir(label_dir)
 
 def image_prep_cls(image):
   # Image preprocessing
