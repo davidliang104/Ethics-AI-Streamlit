@@ -20,6 +20,9 @@ image_dir = 'images'
 det_dir = os.path.join('yolov5', 'runs', 'detect', 'exp')
 label_dir = os.path.join(det_dir, 'labels')
 
+if not os.path.exists(image_dir):
+    os.makedirs(image_dir)
+
 def silent_remove(filename):
     if os.path.exists(filename) and os.path.isfile(filename):
         os.remove(filename)
